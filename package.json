@@ -10,7 +10,6 @@
     "preview": "vite preview",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
-    
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.0.1",
@@ -26,6 +25,7 @@
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^5.0.0",
+    "cross-env": "^10.0.0",
     "eslint": "^9.33.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
