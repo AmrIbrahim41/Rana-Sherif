@@ -49,7 +49,7 @@ const Home = () => {
             {/* --- الجزء الأيمن: الصورة --- */}
             <div className="home-image">
                 <div className="image-background">
-                    <img src={userimg} alt="Rana Sherif" />
+                    <img src="./UserImg.png" alt="Rana Sherif" />
                 </div>
             </div>
         </div>
@@ -57,4 +57,3 @@ const Home = () => {
 }
 
 export default Home;
-
