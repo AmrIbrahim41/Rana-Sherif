@@ -1,0 +1,215 @@
+/* --- تنسيق القسم الرئيسي --- */
+.home-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 8%;
+    min-height: 100vh;
+    gap: 2rem;
+    font-family: 'Poppins', sans-serif;
+
+    /* -->> الحل: أضف السطرين دول هنا <<-- */
+    position: relative; /* z-index مش بتشتغل من غير position */
+    z-index: 1;         /* خلي القسم ده في الطبقة رقم 1 */
+}
+
+/* --- تنسيق الجزء الأيسر (النصوص) --- */
+.home-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.home-text h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--secondary-text-color);
+}
+
+.home-text .name-gradient {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0;
+    background: var(--Mix-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.home-text h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary-text-color);
+    margin-top: -10px; /* لتقريبها من الاسم */
+}
+
+.home-text p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+/* --- تنسيق الأزرار --- */
+.home-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--third-text-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: var(--third-text-color);
+    border-color: var(--third-text-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--third-text-color);
+    color: white;
+}
+
+.btn-secondary svg {
+    margin-right: 8px;
+}
+
+/* --- تنسيق أيقونات التواصل الاجتماعي --- */
+.home-socials {
+    margin-top: 40px;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.home-socials a {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.home-socials a:hover {
+    transform: scale(1.2); /* تأثير التكبير عند المرور */
+    filter: brightness(1.1); /* زيادة بسيطة في الإضاءة */
+}
+
+/* ألوان كل أيقونة على حدة */
+.home-socials .facebook { color: #1877F2; }
+.home-socials .instagram { color: #E4405F; }
+.home-socials .linkedin { color: #0A66C2; }
+.home-socials .twitter { color: #1DA1F2; } /* لون تويتر الأزرق المشهور */
+.home-socials .whatsapp { color: #25D366; }
+
+
+
+
+
+
+
+
+/* --- تنسيق الجزء الأيمن (الصورة) --- */
+.home-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-background {
+    position: relative;
+    width: 80%;
+    max-width: 400px;
+}
+
+/* --- إنشاء الخلفية الزرقاء والحدود باستخدام ::before و ::after --- */
+.image-background::before,
+.image-background::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+}
+
+/* الخلفية الزرقاء (شكل الفرشاة) */
+.image-background::before {
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    top: -5%;
+    left: -5%;
+    border-radius: 60% 40% 30% 70% / 70% 30% 70% 40%; /* شكل عشوائي */
+    transform: rotate(-10deg);
+    animation: morph 8s ease-in-out infinite;
+}
+
+/* الإطار الخارجي */
+.image-background::after {
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--secondary-color);
+    top: 5%;
+    left: 5%;
+    border-radius: 5px;
+    transform: rotate(5deg);
+}
+
+.home-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    position: relative; /* لتكون فوق الخلفية */
+}
+
+/* --- أنيميشن لشكل الفرشاة --- */
+@keyframes morph {
+    0% { border-radius: 60% 40% 30% 70% / 70% 30% 70% 40%; }
+    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+    100% { border-radius: 60% 40% 30% 70% / 70% 30% 70% 40%; }
+}
+
+
+/* --- لجعل التصميم متجاوب مع الشاشات الصغيرة --- */
+@media (max-width: 992px) {
+    .home-section {
+        flex-direction: column-reverse; /* وضع الصورة فوق النصوص */
+        text-align: center;
+        padding: 50px 5%;
+    }
+    
+    .home-buttons, .home-socials {
+        justify-content: center;
+    }
+
+    .home-image {
+        margin-bottom: 30px;
+        width: 70%;
+    }
+}
+
+/* --- وضع أنماط الوضع المظلم هنا --- */
+body.dark .home-text p {
+    color: #b0b0c0;
+}
+
+body.dark .btn-secondary {
+    background-color: var(--main-color);
+    color: var(--third-text-color);
+    border-color: var(--third-text-color);
+}
+
+body.dark .btn-secondary:hover {
+    background-color: var(--third-text-color);
+    color: var(--main-color);
+}

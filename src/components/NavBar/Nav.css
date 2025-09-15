@@ -1,0 +1,250 @@
+/* General Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  /* Recommended to add this font to your project */
+}
+
+/* Logo Styling */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* Space between logo and name */
+}
+
+.logo-shapes {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+/* Creating the two circles with CSS */
+.logo-shapes::before,
+.logo-shapes::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.logo-shapes::before {
+  width: 30px;
+  height: 30px;
+  background-color: #ffc107;
+  /* Yellow */
+  top: 5px;
+  left: 0;
+  z-index: 1;
+}
+
+.logo-shapes::after {
+  width: 30px;
+  height: 30px;
+  background-color: #007bff;
+  /* Blue */
+  top: 5px;
+  left: 15px;
+}
+
+.nav-logo h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  /* 1. نضع اللون المتدرج كخلفية للعنصر */
+  background: var(--Mix-color);
+  /* 2. نجعل الخلفية تقتصر على حدود النص فقط */
+  -webkit-background-clip: text;
+  /* لدعم المتصفحات القديمة */
+  background-clip: text;
+  color: transparent;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 35px;
+  /* Space between links */
+
+
+
+
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text-color);
+  /* اللون شبه الأسود في الحالة الطبيعية */
+  font-weight: 600;
+  font-size: large;
+  transition: color 0.3s ease;
+}
+
+
+.nav-links li a:hover {
+  background: var(--Mix-color);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Active link style */
+.nav-links li a.active {
+  background: var(--Mix-color);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hide mobile contact button by default */
+.contact-btn-mobile {
+  display: none;
+}
+
+
+/* Contact Button Styling (for desktop) */
+.contact-btn {
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.15s ease-in-out;
+  background: var(--Mix-color);
+}
+
+.contact-btn:hover {
+  background: var(--Mix-color);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+
+
+/* Hamburger Menu Styling */
+.hamburger {
+  display: none;
+  /* Hidden by default */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+    /* Hide the regular menu */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+
+
+
+
+    opacity: 0;
+    /* خليها شفافة في البداية */
+    transform: translateY(-10px);
+    /* خليها تبدأ من فوق شوية */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* الحركة الناعمة */
+    pointer-events: none;
+    /* عشان الليكات متكونش قابلة للضغط وهي مختفية */
+
+
+  }
+
+  .nav-links.active {
+    display: flex;
+    /* Show the menu when active */
+    opacity: 1;
+    /* خليها تظهر بالكامل */
+    transform: translateY(0);
+    /* رجعها مكانها الطبيعي */
+    pointer-events: auto;
+    /* خلي الليكات قابلة للضغط تاني */
+    z-index: 100;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .contact-btn {
+    display: none;
+    /* Hide desktop button on mobile */
+  }
+
+  .contact-btn-mobile {
+    display: inline-block;
+    background: var(--Mix-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+
+
+/* Styling for the X animation */
+.hamburger.active .line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Add a transition to the lines for a smooth effect */
+.hamburger .line {
+  /* ... old properties ... */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Dark Mode Styles */
+body.dark .navbar {
+  background-color: var(--main-color);
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .nav-links li a {
+  color: var(--text-color);
+}
+
+body.dark .hamburger .line {
+  background-color: var(--text-color);
+}
+
+body.dark .nav-links {
+  background-color: var(--main-color);
+}

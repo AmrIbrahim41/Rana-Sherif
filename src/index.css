@@ -1,0 +1,56 @@
+/* CSS Variables */
+:root {
+    --main-color: #ffffff;
+    --secondary-color: #333333;
+    --background-color: #1388e8;
+    --border-color: #ebeced;
+    --text-color: #333333;
+    --secondary-text-color: #1087e8;
+    --third-text-color: #fac61b;
+    --font-family: 'Arial, sans-serif';
+    --Mix-color: linear-gradient(to right, #b197fc, #ffc107);
+    --Cards-color: #ffffff;
+}
+
+body.dark {
+    --main-color: #1a1a2e;
+    --secondary-color: #ffffff;
+    --background-color: #0f0f23;
+    --border-color: #2a2a3e;
+    --text-color: #e0e0e0;
+    --secondary-text-color: #b197fc;
+    --third-text-color: #ffd700;
+    --Cards-color: #0f0f23;
+}
+
+/* Base reset and typography */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body, #root {
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', var(--font-family);
+    color: var(--text-color);
+    background-color: var(--main-color);
+    line-height: 1.5;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}

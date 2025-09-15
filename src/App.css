@@ -1,0 +1,13 @@
+:root{
+    --main-color: #ffffff;
+    --secondary-color: #333333;
+    --background-color: #1388e8;
+    --border-color: #ebeced;
+    --text-color: #333333;
+    --secondary-text-color: #1087e8;
+    --third-text-color: #fac61b;
+    --font-family: 'Arial, sans-serif';
+    --Mix-color:linear-gradient(to right, #b197fc, #ffc107);
+    --Cards-color: #ebeced;
+
+}

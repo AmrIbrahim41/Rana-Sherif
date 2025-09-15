@@ -1,0 +1,62 @@
+.experiences-section {
+    color: white;
+    padding: 5rem 2rem;
+    text-align: left;
+}
+
+.experiences-header {
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.experiences-header h2 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin: 0;
+    background: var(--Mix-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+
+
+}
+
+
+
+.experiences-header p {
+    color: #888893;
+    line-height: 1.6;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .experiences-section {
+        padding: 3rem 1rem;
+        text-align: center;
+    }
+
+    .experiences-header {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .experiences-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+body.dark .experiences-section {
+    background-color: var(--background-color);
+}
