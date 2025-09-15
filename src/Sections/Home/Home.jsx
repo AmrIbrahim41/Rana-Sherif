@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faInstagram, faLinkedinIn, faFacebookMessenger, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import Links from '../../Data/Links/links.jsx';
+import userimg from'/UserImg.png'
 
 const Home = () => {
     const userName = "Rana Sherif";
@@ -48,7 +49,7 @@ const Home = () => {
             {/* --- الجزء الأيمن: الصورة --- */}
             <div className="home-image">
                 <div className="image-background">
-                    <img src="./UserImg.png" alt="Rana Sherif" />
+                    <img src={userimg} alt="Rana Sherif" />
                 </div>
             </div>
         </div>

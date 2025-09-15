@@ -1,4 +1,5 @@
 import './About.css'; // <-- متنساش تستدعي ملف الـ CSS
+import userimg_2 from'/UserImg.png'
 
 // بيانات المهارات عشان نعرضها بشكل منظم
 const skillsData = [
@@ -16,7 +17,7 @@ const About = () => {
             {/* --- الجزء الأيسر: الصورة --- */}
             <div className="about-image">
                 {/* هنحط الصورة هنا. الـ div اللي حواليها عشان نضيف خلفية الفرشاة الزرقاء */}
-                <img src="/UserImg_2.png" alt="Rana Sherif" />
+                <img src={userimg_2} alt="Rana Sherif" />
             </div>
 
             {/* --- الجزء الأيمن: النصوص والمهارات --- */}
